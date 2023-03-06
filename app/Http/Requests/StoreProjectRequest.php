@@ -26,7 +26,8 @@ class StoreProjectRequest extends FormRequest
         return [
             'title' => ['required', 'unique:projects' ,'max:200'],
             'description' => ['nullable', 'max:300'],
-            'type_id' => ['nullable', 'exists:types,id']
+            'type_id' => ['nullable', 'exists:types,id'],
+            'technology_id' => ['nullable', 'exists:technologies,id']
         ]; 
     }
 
@@ -42,7 +43,8 @@ class StoreProjectRequest extends FormRequest
             'title.unique' => 'Questo titolo è già stato assegnato ad un progetto',
             'title.max' => 'Il titolo non deve essere più lungo di :max caratteri',
             'description.max' => 'La descrizione non può contenere più di :max caratteri',
-            'type_id.exists' => 'Tipo non valido'
+            'type_id.exists' => 'Tipo non valido',
+            'technologies_id.exists' => 'Tecnologia selezionata non valida'
         ];
     }
 }

@@ -28,7 +28,7 @@ class StoreTypeRequest extends FormRequest
         ];
     }
 
-     /**
+    /**
      * Get the error messages for the defined validation rules.
      *
      * @return array
@@ -37,7 +37,7 @@ class StoreTypeRequest extends FormRequest
     {
         return [
             'name.required' => 'Il nome è obbligatorio',
-            'name.unique' => 'Questo nome è già stato assegnato ad un progetto',
+            'name.unique' => 'Questo nome è già stato assegnato ad un tipo',
             'name.max' => 'Il nome non deve essere più lungo di :max caratteri',
         ];
     }

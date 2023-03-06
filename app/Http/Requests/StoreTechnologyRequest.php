@@ -13,7 +13,7 @@ class StoreTechnologyRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,22 @@ class StoreTechnologyRequest extends FormRequest
      */
     public function rules()
     {
+        return [  
+            'name' => ['required', 'unique:types' ,'max:70']    
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+    */
+    public function messages()
+    {
         return [
-            //
+            'name.required' => 'Il nome è obbligatorio',
+            'name.unique' => 'Questo nome è già stato assegnato ad una tecnologia',
+            'name.max' => 'Il nome non deve essere più lungo di :max caratteri',
         ];
     }
 }

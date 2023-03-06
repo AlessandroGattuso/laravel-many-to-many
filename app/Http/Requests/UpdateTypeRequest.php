@@ -37,8 +37,8 @@ class UpdateTypeRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Il name è obbligatorio',
-            'name.unique' => 'Questo nome è già stato assegnato ad un progetto',
+            'name.required' => 'Il nome è obbligatorio',
+            'name.unique' => 'Questo nome è già stato assegnato ad un tipo',
             'name.max' => 'Il name non deve essere più lungo di :max caratteri',
         ];
     }

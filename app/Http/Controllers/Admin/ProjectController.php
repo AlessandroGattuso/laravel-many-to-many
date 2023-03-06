@@ -54,9 +54,9 @@ class ProjectController extends Controller
         // $newProject->fill($data);
         
         // $newProject->save();
-        if($request->has('technologies')){
+        if($request->has('technologies'))
             $newProject->technologies()->attach($request->technologies);
-        }
+        
 
         return redirect()->route('admin.projects.index')->with('message', 'il progetto è stato creato');
     }
@@ -100,6 +100,10 @@ class ProjectController extends Controller
 
         $project->update($data);
 
+        if($request->has('technologies'))
+            $project->technologies()->sync($request->technologies);
+
+    
         return redirect()->route('admin.projects.index')->with('message', 'Modifica al progetto eseguita');
     }
 
