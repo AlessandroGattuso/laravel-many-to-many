@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <div class="container">
-        <div class="row">
+        <div class="row pb-5">
             <div class="col-12 my-5">
                 <div class="d-flex justify-content-between">
                     <h3>Dettaglio tipo: {{ $type->name }}</h3>
@@ -15,7 +15,7 @@
             </div>
             <div class="col-12">
                 <h3>Tutti i progetti di questo tipo</h3>
-                <div class="row">
+                <div class="row gy-2">
                     @forelse($type->projects as $project)
                         <div class="card">
                             <div class="card-header card-title">{{$project->title}}</div>
